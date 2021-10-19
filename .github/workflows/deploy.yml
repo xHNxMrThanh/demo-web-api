@@ -1,6 +1,11 @@
 name: Deploy
 on:
   workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: false
+        default: 'Mona the Octocat'
   push:
     branches:
       - master
@@ -11,5 +16,4 @@ jobs:
     steps:
       - name: Build API
         run: |
-          echo "Build API"
-          sleep 10s
+          echo "Hello ${{ github.event.inputs.name }}!"
