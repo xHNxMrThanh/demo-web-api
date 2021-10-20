@@ -6,14 +6,6 @@ on:
         description: 'Person to greet'
         required: false
         default: 'Mona the Octocat'
-      github.sha:
-        description: 'sha'
-        required: false
-        default: 'zzz'
-      github.head_ref:
-        description: 'head ref'
-        required: false
-        default: 'zzz1'
   push:
     branches:
       - master
@@ -25,6 +17,4 @@ jobs:
       - name: Build API
         run: |
           echo "name la ${{ github.event.inputs.name }}!"
-          echo "sha la ${{ github.event.inputs.github.sha }}!"
-          echo "head ref la ${{ github.event.inputs.github.head.ref }}!"
 
