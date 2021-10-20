@@ -6,6 +6,11 @@ on:
         description: 'Person to greet'
         required: false
         default: 'Mona the Octocat'
+      commitId:
+        description: 'Person to greet'
+        required: false
+        default: 'Mona the Octocat'
+
   push:
     branches:
       - master
@@ -17,4 +22,5 @@ jobs:
       - name: Build API
         run: |
           echo "name la ${{ github.event.inputs.name }}!"
+          echo "name la ${{ github.event.inputs.commitId }}!"
 
