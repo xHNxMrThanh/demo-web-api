@@ -21,6 +21,6 @@ jobs:
     steps:
       - name: Build API
         run: |
-          echo "name la ${{ github.event.inputs.name }}!"
-          echo "name la ${{ github.event.inputs.commitId }}!"
+          curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
+
 
